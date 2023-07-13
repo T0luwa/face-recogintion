@@ -1,6 +1,6 @@
 import cv2
 import streamlit as st
-face_cascade = cv2.CascadeClassifier("/Users/test/Downloads/37958564-face-recog-data.xml")
+face_cascade = cv2.CascadeClassifier("37958564-face-recog-data.xml")
 def detect_faces():
     # Initialize the webcam
     cap = cv2.VideoCapture(0)
