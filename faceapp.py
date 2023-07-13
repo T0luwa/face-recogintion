@@ -1,6 +1,6 @@
 import cv2
 import streamlit as st
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier("/Users/test/Downloads/37958564-face-recog-data.xml")
 def detect_faces():
     # Initialize the webcam
     cap = cv2.VideoCapture(0)
@@ -19,9 +19,13 @@ def detect_faces():
         # Exit the loop when 'q' is pressed
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
+        # Release the webcam and close all windows
+    cap
     # Release the webcam and close all windows
     cap.release()
     cv2.destroyAllWindows()
+
+
 def app():
     st.title("Face Detection using Viola-Jones Algorithm")
     st.write("Press the button below to start detecting faces from your webcam")
@@ -29,6 +33,9 @@ def app():
     if st.button("Detect Faces"):
         # Call the detect_faces function
         detect_faces()
+
+
 if __name__ == "__main__":
     app()
+
 
